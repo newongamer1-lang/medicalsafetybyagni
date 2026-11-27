@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#d90429" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Rider Emergency Info</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Emergency popup (shown on open) ===== -->
+  <div id="sosModal" class="modal show" role="dialog" aria-modal="true" aria-labelledby="sosTitle">
+    <div class="modal-card">
+      <div class="pulse">🚨</div>
+      <h2 id="sosTitle">Rider Emergency</h2>
+      <p>This rider may be injured. Please help by calling for help and alerting their family.</p>
+      <div class="modal-blood">Blood Group <strong id="modalBlood">--</strong></div>
+      <a id="modalAmbulance" class="btn btn-red big">🚑 Call Ambulance</a>
+      <a id="modalPolice" class="btn btn-blue big">🚓 Call Police</a>
+      <button id="modalSms" class="btn btn-green big">💬 Alert Family (SMS)</button>
+      <button id="closeModal" class="btn btn-ghost">View full medical info</button>
+    </div>
+  </div>
+
+  <!-- ===== Sending popup ===== -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <header class="hero">
+    <div class="badge">EMERGENCY INFO</div>
+    <img id="photo" class="photo" alt="" hidden />
+    <h1 id="name">--</h1>
+    <div class="blood">
+      <span>Blood Group</span>
+      <strong id="blood">--</strong>
+    </div>
+  </header>
+
+  <main>
+    <section class="card quick">
+      <a id="callAmbulance" class="tile red"><span>🚑</span>Ambulance<small id="ambNum"></small></a>
+      <a id="callPolice" class="tile blue"><span>🚓</span>Police<small id="polNum"></small></a>
+      <a id="callTraffic" class="tile amber"><span>🚦</span>Traffic Police<small id="trfNum"></small></a>
+      <a id="callFire" class="tile orange"><span>🚒</span>Fire<small id="fireNum"></small></a>
+    </section>
+
+    <section class="card">
+      <h3>Personal Details</h3>
+      <dl class="info">
+        <div><dt>Name</dt><dd id="infoName"></dd></div>
+        <div><dt>Date of Birth</dt><dd id="infoDob"></dd></div>
+        <div><dt>Age</dt><dd id="infoAge"></dd></div>
+        <div><dt>Blood Group</dt><dd id="infoBlood" class="hl"></dd></div>
+        <div id="rowBike"><dt>Bike No.</dt><dd id="infoBike"></dd></div>
+        <div><dt>Personal Phone</dt><dd><a id="infoPhone"></a></dd></div>
+      </dl>
+    </section>
+
+    <section class="card" id="medicalCard">
+      <h3>Medical Information</h3>
+      <dl class="info" id="medicalList"></dl>
+    </section>
+
+    <section class="card">
+      <h3>Emergency Contacts</h3>
+      <div id="contacts"></div>
+      <button id="smsAll" class="btn btn-green">💬 SMS all emergency contacts</button>
+      <p class="hint">Your location is added to the message if you allow location access.</p>
+    </section>
+
+    <section class="card">
+      <h3>Bystander: what to do</h3>
+      <ol class="steps">
+        <li>Stay calm and make sure the area is safe from traffic.</li>
+        <li>Call the ambulance first, then police.</li>
+        <li><strong>Do not remove the helmet</strong> unless the rider is not breathing.</li>
+        <li>Do not move the rider unless there is immediate danger.</li>
+        <li>Alert family using the SMS button above.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>Tap-to-help emergency profile · Thank you for helping 🙏</footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
